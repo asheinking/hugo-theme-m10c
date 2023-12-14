@@ -35,6 +35,21 @@
   font-weight: bold;
 }
 
+.app-header-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app-header-menu-item {
+  display: block;
+  margin-bottom: -16px; /* Adjust as needed for spacing between items */
+}
+
+.menu-item-separator {
+  margin-right: 1px; /* Adjust as needed for spacing between items and separator */
+}
+
 @media (min-width: 940px) {
   .app-header {
     position: fixed;

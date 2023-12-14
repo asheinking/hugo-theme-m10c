@@ -25,12 +25,15 @@
       <span class="app-header-title">{{ .Site.Title }}</span>
       {{- with .Site.Menus.main }}
       <nav class="app-header-menu">
+        <ul class="app-header-menu-list">
+          
         {{- range $key, $item := . }}
-          {{- if ne $key 0 }}
-            {{ $.Site.Params.menu_item_separator | default " - " | safeHTML }}
+          <li>{{- if ne $key 0 }}
+            <span class="menu-item-separator">{{ $.Site.Params.menu_item_separator | default "" | safeHTML }}</span>
           {{ end }}
-          <a class="app-header-menu-item" href="{{ $item.URL }}">{{ $item.Name }}</a>
+          <a class="app-header-menu-item" href="{{ $item.URL }}">{{ $item.Name }}</a></li>
         {{- end }}
+      </ul>
       </nav>
       {{- end }}
       <p>{{ .Site.Params.description | default "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium." }}</p>
